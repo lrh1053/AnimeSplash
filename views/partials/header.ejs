@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AnimeSplash</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
+    </head>
+    <body>
+    <div class="ui fixed inverted menu">
+            <div class="header item">
+                <i class="retro camera icon"></i>
+                <a href="/">AnimeSplash</a>
+            </div>
+
+                <% if(!currentUser){ %>
+                    <div class="item">
+                        <a class="ui primary button" href="/animesplashs/new">Upload New Art</a>    
+                    </div>
+                    <div class="item">
+                        <a class="ui secondary button" href="/login">Login</a>
+                    </div>
+                    <div class="item">
+                        <a class="ui secondary button" href="/register">Sign Up</a>
+                    </div>
+                <% } else { %>
+                    <div class="item">
+                        <a class="ui primary button" href="/animesplashs/new">Upload New Art</a></li>    
+                    </div>
+                    <div class="item">
+                        <a href="#">Signed In As <%= currentUser.username %></a>  
+                    </div>
+                    <div class="item">
+                        <a class="ui secondary  button" href="/logout">Logout</a>  
+                    </div>
+                <% } %>
+        </div>
+
+    

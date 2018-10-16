@@ -1,0 +1,23 @@
+<% include ../partials/header %> 
+
+ <div class="container">
+
+     <header class="jumbotron">
+         <div class="container">
+             <h1><span class="titleIndexPage">Anime Splash</span></h1>
+             <p>View photos and fan arts from different animes.</p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% animesplashs.forEach(function(animesplash){ %>
+            <div class="col-md-4 col-sm-6">
+                <div class="thumbnail">
+                   <a href="/animesplashs/<%= animesplash._id %>"><img src="<%= animesplash.image %>"></a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>
